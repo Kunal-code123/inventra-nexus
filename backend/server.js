@@ -14,8 +14,11 @@ app.use(
   })
 );
 
-// backend/server.js
 
+// ✅ ALL ROUTES
+app.use("/api/products", require("./routes/productRoutes"));
+app.use("/api/suppliers", require("./routes/supplierRoutes"));
+app.use("/api/stock", require("./routes/stockRoutes"));
 app.use("/api/forecast", require("./routes/forecastRoutes"));
 app.use("/api/reports", require("./routes/reportRoutes"));
 
@@ -31,20 +34,6 @@ app.get('/', (req, res) => {
   res.send('Inventra Backend Running!');
 });
 
-app.get('/test-supplier', async (req, res) => {
-  try {
-    const supplier = new Supplier({
-      name: 'ABC Supplies',
-      contactEmail: 'abc@supplier.com',
-      phone: '1234567890',
-      address: 'Mumbai',
-    });
-    await supplier.save();
-    res.json(supplier);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
 
 // Start Server
 const PORT = process.env.PORT || 5000;
