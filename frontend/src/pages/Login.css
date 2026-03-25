@@ -1,0 +1,163 @@
+/* Make entire page pure black */
+body {
+  background: #000000;
+  margin: 0;
+}
+
+/* Background Container */
+.login-container {
+  min-height: 100vh;
+  background: #000000;   /* pure black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.login-card {
+  width: 460px;
+  max-width: 92vw;
+  padding: 55px 45px;
+  border-radius: 28px;
+
+  background: #0a0a0a;  /* deep black */
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.9);
+
+  color: white;
+
+  position: relative; /* important */
+}
+
+/* Icon */
+.app-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 22px;
+
+  background: linear-gradient(145deg, #facc15, #eab308);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  color: #000000;
+
+  margin: 0 auto 25px auto;
+
+  box-shadow:
+    0 10px 25px rgba(250, 204, 21, 0.35),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Title */
+.login-card h1 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #facc15;
+  margin-bottom: 25px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: #141414;
+  border-radius: 50px;
+  padding: 4px;
+  margin-bottom: 25px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: #0f172a;
+  color: white;
+  border: 2px solid #3b82f6;
+}
+
+/* Inputs */
+.login-card input,
+.login-card select {
+  width: 100%;
+  padding: 13px 15px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  background: #0d0d0d;
+  color: white;
+  outline: none;
+  transition: 0.2s;
+}
+
+.login-card input:focus,
+.login-card select:focus {
+  border-color: #3b82f6;
+}
+
+/* Password Box */
+.password-box {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+/* Button */
+.signin-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #facc15, #eab308);
+  color: black;
+  transition: 0.3s;
+}
+
+.signin-btn:hover {
+  opacity: 0.9;
+}
+
+/* Forgot */
+.forgot {
+  text-align: center;
+  margin-top: 20px;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+/* Force Chrome autofill dark */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0px 1000px #111111 inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}

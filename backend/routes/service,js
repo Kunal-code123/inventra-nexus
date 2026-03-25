@@ -1,0 +1,33 @@
+// backend/server.js
+
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const cartRoutes = require('./routes/cartRoutes');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// Connect to MongoDB
+mongoose.connect('mongodb://127.0.0.1:27017/INVENTRA', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// API routes
+app.use('/api/cart', cartRoutes);
+
+// Example root route
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
+// Start server
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+
+const reportRoutes = require("./routes/report");
+app.use("/api/reports", reportRoutes);
