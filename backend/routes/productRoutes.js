@@ -1,10 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
-// TEST ROUTE (temporary)
-const express = require("express");
-const router = express.Router();
-const Product = require("../models/Product");
+const Product = require("../models/productModel"); // ⚠️ check filename
 
 // GET all products
 router.get("/", async (req, res) => {
@@ -15,7 +11,5 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-
-module.exports = router;
 
 module.exports = router;
