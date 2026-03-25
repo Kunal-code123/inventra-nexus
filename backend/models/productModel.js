@@ -1,33 +1,37 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    trim: true
   },
+
   category: {
     type: String,
-    default: ''
+    default: "General",
   },
+
   price: {
     type: Number,
     required: true,
-    default: 0
+    default: 0,
   },
+
   quantity: {
     type: Number,
-    default: 0
+    default: 0,
   },
+
   supplier: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Supplier',
-    default: null
+    ref: "Supplier",
+    default: null,
   },
+
   createdAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 module.exports =
